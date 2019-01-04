@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="ArrayObjectAssignPart2.js"></script> 
+    </head>
+
+    <body>
+        <button type="button" onclick="findOddEven()">Click to see Odd and Even numbers from Array</button>
+        <p id="OddNumbers"></p>
+
+        <button type="button" onclick="SortArray()">Click to see sorted Array</button>
+        <p id="SortFruits"></p>
+
+        <!--
+            3. What will be output for below code and why
+            [1,2,4,5,11,12,22,23,31].sort()
+
+            Ans: Output will be : [1,11,12,2,22,23,31,4,5]
+            Because it sorts the array in alphabetical order.
+        -->
+
+        <button type="button" onclick="AscArray()">Click to see sorted Array in ascending and Descending order</button>
+        <p id="AscOrder"></p>
+
+        <button type="button" onclick="evenUsingFilter()">Click to see even numbers using filter method.</button>
+        <p id="Even"></p>
+
+        <button type="button" onclick="GreaterThan50()">Check if 50 included in array or not.</button>
+        <p id="GreaterValue"></p>
+
+        <!--7. What is Date , what will be type of date?
+        Ans: Date is javascript object. -->
+
+        <button type="button" onclick="TodaysDate()">Click to see today' date in MM/DD/YYYY format</button>
+        <p id="DateToday"></p>
+
+        <button type="button" onclick="findMax()">Click to see max value from [1,2,4,5,11,12,22,23,31]</button>
+        <p id="MaxValues"></p>
+
+        <button type="button" onclick="findMin()">Click to see min value from [1,2,4,5,11,12,22,23,31]</button>
+        <p id="MinValues"></p>
+
+        <!--
+            11. What is use of Random function , write code to get random values from 0 to 9;
+            Ans:Random is math function which returns the random numbers between given range.
+            Var ranNumber = Math.random(0,10);
+        -->
+
+        <button type="button" onclick="getRandom()">Click to  get random values from 0 to 9</button>
+        <p id="RandomValue"></p>
+
+        <!--
+            12. What is ceil and floor function and what is use of them.
+            Ans:
+            ceil rounds up the value to its nearest integer.
+            floor rounds down the values to its nearest integer.
+        -->
+
+        <!--
+            13. What is round and how it is different from ceil and floor.
+            Ans:
+            round() rounds the value to its nearest integer depend on number given after decimal. It works as mathematical round off, thats why it differ from ceil and floor.
+        -->
+
+        <!--
+        14. What will be output for below codes and give Ans for output.
+
+1. 1 + “2” + “2”
+->"122" Ans: as "2" is string and operator is +, 1 will be converted to string and concatination will happen i.e. "12" & "12"+"2"="122"
+
+2. 1+2+3 +”4”
+->"64"Ans: 1+2+3=6 & 6+"4"=64 as 6 will be converted to string and concatination will happen 
+
+3. “4” + true
+->"4true"Ans: as "4" is string, true will be converted to string and concatination will happen 
+
+4. “True” + true
+->"Truetrue"Ans: as "True" is string, true will be converted to string and concatination will happen  
+
+5. 1 + true
+->2Ans: as 1 is number, true will be converted to 1 by automatic type conversion 
+
+6. 2 + false
+->2Ans: Numeric value of false is 0, so 2+0=2
+
+7. "4" * true
+->4Ans: As operator is multiplication,  "4" is getting converted to number and numeric value of true is 1, so 4*1=4
+
+8. 4 * “Af”
+->NaNAns: As "Af" is not a number and can't be converted to number, output will be not a number
+
+9. "4" * "A"
+->NaNAns: As "A" is not a number and can't be converted to number, output will be not a number
+
+10. “4”*”4”
+->16Ans: as "4" can be converted to number, due to * operator both will be converted to number so 4*4=16
+
+11. 4 + "4A" +10
+->"44A10"Ans: as + operator, 4+"4A"="44A" and as "44A" is string, 10 will be converted to string and concatination will happen
+
+12. 4 + "4" * 10
+->44Ans: It will give priority to * operator, so "4"*10 will execute first. "4" will be considered as number and output will be 40. Now 4+40 will execute and output will be 44
+
+13. 4 + "4A" * 10
+->NaNAns: It will give priority to * operator, so "4A"*10 will execute first and output will be NaN. so 4+NaN=NaN (Any number operated with NaN will NaN) 
+
+14. 4 + "true" * 10
+->NaNAns: It will give priority to * operator, so "true"*10 will execute first and output will be NaN, as "true" is string and can't be converted to number. So 4+NaN=NaN
+
+15. true *80
+->80Ans: as true is boolean, numeric value of true is 1. So 1*80=80 
+
+16. 1 +2+ 3+ "ad"
+->"6ad"Ans:1+2+3=6 & 6+"4"=64 as 6 will be converted to string and concatination will happen
+
+17. "1" +2+ 3
+->"123"Ans: As we have only + operator in expression, it will execute from left to right. Now as "1" is string, 2 will be converted to string and concatination will happen. out will be "12", "12"+3 will be again "123" 
+
+18. "1" *2+ 3+8*"true"
+->NaNAns: "1"*2 will be 2 as "1" will be converted to number and out put will be 2. Later 8*"true" will execute and output will be NaN as "true" is not a number. Later any operation with NaN will retrun NaN
+
+19. true*0 + "false"
+->"0false"Ans: First true*0 will excute and output will be 0 as numeric of true will be 1. 0+"false" will be"0false" as "false" is string & 0 will be converted to string
+
+20. 1*2+3+8+"true"
+->"13true"Ans: first 1*2 will execute and output will be 2. Now it will execute left to right. So 2+3=5,5+8=13 and 13+"true"="13true" as "true" is string and 13 will be converted to string
+
+21. 1 *null + true+10 + "10"
+->"1110"Ans: anything multiply by null is zero, 0 +true=1 (true converted to numeric), 1+10=11, 11+"11"="1110" (11 converted to string)
+        -->
+    </body>
+</html>
